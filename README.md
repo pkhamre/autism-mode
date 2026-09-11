@@ -2,19 +2,19 @@
 
 **Autism-friendly outputs. No mind reading required.**
 
-A skill for your coding assistant that stops it from making you read between the lines. Assumptions stated. Scope defined. Uncertainty labeled. No hidden meaning.
+A skill for your coding assistant that stops it from making you read between the lines. Assumptions are stated, scope is defined, uncertainty is labeled, and nothing is left for you to infer.
 
 No autism diagnosis needed. These are precise-communication defaults, useful to anyone who would rather not guess what the agent meant.
 
 ## What it does
 
-Most agents communicate by implication. They pick a meaning for your vague request, blend facts with guesses, change the plan without saying so, and assume you share conventions you have never seen. For many readers this is invisible friction. For many autistic readers it is the whole problem: the answer is present, but the meaning is not.
+Most agents communicate by implication. They pick a meaning for your vague request, blend facts with guesses, change the plan without saying so, and assume you share conventions you have never seen. Many readers never notice the friction. For many autistic readers it is the problem: the answer is present, but the meaning is not.
 
 This skill changes the shape of the agent's output so the meaning is on the page:
 
 - assumptions, prerequisites, and hidden dependencies are stated, not implied
 - facts, inferences, and uncertainties are labeled separately
-- scope is explicit, including what will **not** change
+- scope is explicit, including what will not change
 - "done" is defined as something observable
 - plan changes are announced with a reason
 - terminology stays stable, names don't drift
@@ -35,8 +35,8 @@ This skill changes the shape of the agent's output so the meaning is on the page
 > **Assumption:** access tokens must still reject expired tokens.
 >
 > **Changes:**
-> `src/auth/verify.ts` — split refresh-token verification from access-token verification.
-> `src/routes/refresh.ts` — use the refresh-token verifier.
+> `src/auth/verify.ts`: split refresh-token verification from access-token verification.
+> `src/routes/refresh.ts`: use the refresh-token verifier.
 >
 > **Not changing:** database schema, token format, `/auth/login`.
 >
@@ -44,7 +44,7 @@ This skill changes the shape of the agent's output so the meaning is on the page
 >
 > **Uncertainty:** none currently.
 
-The ADHD sibling says "here's what to do." This one says "here is exactly what is happening, what I mean, and what you do not need to infer."
+The ADHD sibling leads with the action. This one leads with the meaning.
 
 ## The rules
 
@@ -61,11 +61,11 @@ Full text in [SKILL.md](SKILL.md).
 9. Remove social guesswork.
 10. Prefer predictable structure.
 
-Plus a defining behavior: **surface ambiguity**. Reversible and cheap means state the assumption and continue; irreversible and high-impact means stop and offer concrete options.
+One behavior ties the rest together: **surface ambiguity**. If a choice is reversible and low-cost, the agent states its assumption and continues. If it is irreversible or high-impact, the agent stops and offers concrete options.
 
 ## Complete, not terse
 
-This skill is not about writing less. Omitting context creates uncertainty, and uncertainty is the cost it exists to remove. The principle is **complete, not verbose. Explicit, not simplified.** Some readers want more detail, because missing context is itself the problem.
+This skill does not mean writing less. Missing context creates uncertainty, and removing that uncertainty is the point. Be complete without padding, and explicit without oversimplifying. Some readers want the extra detail, because missing context is the problem.
 
 ## Pairs with i-have-adhd
 
@@ -92,11 +92,11 @@ Fork, edit `SKILL.md`, and keep your copy. The rules are defaults, not a diagnos
 
 ## Who this is for
 
-Autistic people differ. Communication preferences vary widely, and this skill is a set of configurable defaults, not a claim that every autistic person communicates or reads the same way. It is grounded in widely reported preferences for direct, precise, unambiguous language and predictable structure, but you should adjust it to the individual.
+Autistic people differ. Communication preferences vary widely, and this skill is a set of configurable defaults, not a claim that every autistic person communicates or reads the same way. It draws on widely reported preferences for direct, precise, unambiguous language and predictable structure, but you should adjust it to the individual.
 
 ## Credits
 
-Inspired by [i-have-adhd](https://github.com/ayghri/i-have-adhd), which showed that output shape is a real accessibility surface. Grounded in the National Autistic Society's guidance on autism and communication, which notes that individual preferences vary but that direct, precise language and predictability help many autistic people.
+Inspired by [i-have-adhd](https://github.com/ayghri/i-have-adhd), which showed that output shape is an accessibility surface. It also draws on the National Autistic Society's guidance on autism and communication, which notes that individual preferences vary but that direct, precise language and predictability help many autistic people.
 
 ## License
 

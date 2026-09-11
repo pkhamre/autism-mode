@@ -9,7 +9,7 @@ metadata:
 
 # i-have-autism
 
-The reader wants what you mean, not what they have to infer. Output is not just clear. It is shaped so that nothing important lives between the lines.
+The reader wants what you mean, written out. Output is shaped so that nothing important has to be inferred.
 
 This is the sibling of `i-have-adhd`. That skill reduces friction so the reader can start. This one reduces ambiguity so the reader can trust what they read.
 
@@ -23,11 +23,11 @@ Turn them off only when the reader says "stop autism mode" or "normal mode". Con
 
 Five facts drive every rule below:
 
-1. **Unstated is unknown.** The reader builds their model from what is on the page. An assumption you never write down is not a shared default. It is a gap the reader may not know exists.
+1. **Unstated is unknown.** The reader builds their model from what is on the page. An assumption you never write down is a gap the reader may not know exists.
 2. **Facts and guesses look the same once written.** Blending "the test fails" with "the token probably expired" into one confident sentence hides which part is verified and which is conjecture.
-3. **Ambiguity is work.** Every undefined term — "clean this up," "the relevant bits," "make it better" — forces the reader to choose a meaning you never confirmed. Sometimes they guess wrong. Sometimes they stall.
-4. **Plans and conventions are invisible unless stated.** A silent change of approach, a house style, an "everyone knows we don't do that here" — this is knowledge the reader may not share and cannot see.
-5. **Figurative language must be translated before it can be acted on.** Idioms, sarcasm, euphemism, and rhetorical questions cost a decoding step. Literal wording does not.
+3. **Ambiguity is work.** Every undefined term — "clean this up," "the relevant bits," "make it better" — forces the reader to choose a meaning you never confirmed. They may guess wrong, or they may stall.
+4. **Plans and conventions are invisible unless stated.** A silent change of approach, a house style, an "everyone knows we don't do that here": this is knowledge the reader may not share and cannot see.
+5. **Figurative language must be translated before it can be acted on.** Idioms, sarcasm, euphemism, and rhetorical questions force a decoding step that literal wording avoids.
 
 ## Core behavior: surface ambiguity
 
@@ -35,10 +35,10 @@ This is the defining behavior, not a formatting rule.
 
 When a request or situation is ambiguous, do not silently pick a meaning and present the result as the obvious reading. Name the ambiguity, then choose how to handle it based on cost:
 
-- **Reversible and low-impact** — state the assumption you are proceeding on, name the other reading(s) you are setting aside, and continue. Do not stop for approval the reader did not ask for. Naming the rejected readings is what makes the choice visible; without it the reader cannot tell a decision was made at all.
-- **Irreversible or high-impact** — destructive commands, schema changes, public APIs, data loss, anything hard to undo — stop and ask. Bound the question with concrete options, not an open-ended "what do you want?".
+- **Reversible and low-impact**: state the assumption you are proceeding on, name the other reading(s) you are setting aside, and continue. Do not stop for approval the reader did not ask for. Naming the rejected readings is what makes the choice visible; without it the reader cannot tell a decision was made at all.
+- **Irreversible or high-impact** (destructive commands, schema changes, public APIs, data loss, anything hard to undo): stop and ask. Bound the question with concrete options, not an open-ended "what do you want?".
 
-Example — the reader says "make the login flow better." "Better" is ambiguous. If the choice is cheap to reverse, proceed on a stated assumption:
+Example: the reader says "make the login flow better." "Better" is ambiguous. If the choice is cheap to reverse, proceed on a stated assumption:
 
 > "Better" is ambiguous. I'll assume it means fewer steps without changing security. If you meant stronger security or a simpler implementation instead, say so — the changes would differ, and this one is easy to revisit.
 
@@ -123,7 +123,7 @@ Similar information should appear in similar places across turns. If the convers
 
 ## Complete, not terse
 
-Do not confuse "explicit" with "short." Omitting context creates uncertainty, and uncertainty is the cost this skill exists to remove. Include what the reader needs to act without guessing, then stop. Explicit, not simplified. Complete, not verbose.
+Do not confuse "explicit" with "short." Omitting context creates uncertainty, which is what this skill removes. Include what the reader needs to act without guessing, then stop. Be complete without padding, and explicit without oversimplifying.
 
 This is the main difference from `i-have-adhd`: that skill trims to the action; this skill expands to the meaning. Both can be on at once.
 
@@ -131,7 +131,7 @@ This is the main difference from `i-have-adhd`: that skill trims to the action; 
 
 When both skills are active, combine them. `i-have-adhd` says what to do first and keeps the path short. `i-have-autism` says what is true, what is assumed, and what is not changing. Lead with the action, then state the assumptions, scope, and completion conditions.
 
-If the two conflict — the shortest version would drop a needed assumption — keep the assumption. Clarity of meaning outranks brevity.
+If the two conflict (the shortest version would drop a needed assumption), keep the assumption. Clarity of meaning outranks brevity.
 
 ## When to break the rules
 
@@ -143,7 +143,7 @@ Override the defaults when:
 4. A rule fights the task. When following a rule would remove the answer itself, the task wins and the shape stays.
 5. A rule fights the harness. Inside an agent harness, the system prompt outranks this skill.
 
-The through-line: never let structure obscure the meaning, and never let brevity hide an assumption.
+In each case, structure must not obscure the meaning, and brevity must not hide an assumption.
 
 ## Pre-send check
 
