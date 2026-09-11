@@ -1,6 +1,8 @@
-# i-have-autism
+<p align="center">
+  <img src="logo.png" alt="i-have-autism" width="220">
+</p>
 
-**Autism-friendly outputs. No mind reading required.**
+<p align="center"><strong>Autism-friendly outputs. No mind reading required.</strong></p>
 
 A skill for your coding assistant that stops it from making you read between the lines. Assumptions are stated, scope is defined, uncertainty is labeled, and nothing is left for you to infer.
 
