@@ -4,6 +4,17 @@
 
 <p align="center"><strong>Autism-friendly outputs. No mind reading required.</strong></p>
 
+## Install
+
+```bash
+npx skills add pkhamre/i-have-autism
+```
+
+Then turn it on for a session by asking for "autism mode" or invoking the skill. It stays on until you say "stop autism mode" or "normal mode".
+
+
+## What it is
+
 A skill for your coding assistant that stops it from making you read between the lines. Assumptions are stated, scope is defined, uncertainty is labeled, and nothing is left for you to infer.
 
 No autism diagnosis needed. These are precise-communication defaults, useful to anyone who would rather not guess what the agent meant.
@@ -26,11 +37,19 @@ This skill changes the shape of the agent's output so the meaning is on the page
 
 ## What changes
 
-### Before
+<table>
+<tr>
+<td width="50%">
+
+## Before
 
 > This should be pretty straightforward. We can probably reuse the existing auth middleware and clean up the token handling while we're in there. I'll update the relevant bits and then we can see if anything else needs adjusting.
 
-### After
+</td>
+
+<td width="50%">
+
+## After
 
 > **Goal:** accept expired refresh tokens only through `/auth/refresh`.
 >
@@ -45,6 +64,10 @@ This skill changes the shape of the agent's output so the meaning is on the page
 > **Done when:** existing auth tests pass, and an expired refresh-token test passes.
 >
 > **Uncertainty:** none currently.
+
+</td>
+</tr>
+</table>
 
 The ADHD sibling leads with the action. This one leads with the meaning.
 
@@ -69,25 +92,6 @@ One behavior ties the rest together: **surface ambiguity**. If a choice is rever
 
 This skill does not mean writing less. Missing context creates uncertainty, and removing that uncertainty is the point. Be complete without padding, and explicit without oversimplifying. Some readers want the extra detail, because missing context is the problem.
 
-## Pairs with i-have-adhd
-
-`i-have-adhd` reduces friction so you can start. `i-have-autism` reduces ambiguity so you can trust what you read. Enable both and you get **explicit and executable**: the action first, then the assumptions, scope, and completion conditions. When they conflict, clarity of meaning outranks brevity.
-
-## Install
-
-With the [`skills`](https://github.com/vercel-labs/skills) CLI:
-
-```
-npx skills add pkhamre/i-have-autism
-```
-
-The repository is a single skill in plain `SKILL.md` form, so it also works by placing `SKILL.md` where your runtime discovers skills:
-
-- OpenCode: `.agents/skills/i-have-autism/SKILL.md`, or `~/.config/opencode/skills/i-have-autism/SKILL.md` for every project.
-- Claude Code, Codex, Cursor, and other agent-compatible runtimes discover the same `SKILL.md` under `.claude/skills/` or `.agents/skills/`.
-
-Then turn it on for a session by asking for "autism mode" or invoking the skill. It stays on until you say "stop autism mode" or "normal mode".
-
 ## Tune it
 
 Fork, edit `SKILL.md`, and keep your copy. The rules are defaults, not a diagnosis. If a rule fights how you actually want to read, change it.
@@ -95,6 +99,10 @@ Fork, edit `SKILL.md`, and keep your copy. The rules are defaults, not a diagnos
 ## Who this is for
 
 Autistic people differ. Communication preferences vary widely, and this skill is a set of configurable defaults, not a claim that every autistic person communicates or reads the same way. It draws on widely reported preferences for direct, precise, unambiguous language and predictable structure, but you should adjust it to the individual.
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for what helps, the one constraint to respect, and how to add eval cases.
 
 ## Credits
 
