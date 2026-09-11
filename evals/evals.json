@@ -1,0 +1,45 @@
+{
+  "skill_name": "i-have-autism",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "hey, our login flow feels clunky and a few users complained. can you just make it better? do whatever you think is best.",
+      "expected_output": "Names the ambiguity in 'better' instead of silently choosing, and either states an explicit assumption and proceeds (if reversible) or bounds the choice into concrete options. Separates what it knows from what it assumes. States scope and what it will not change.",
+      "files": [],
+      "expectations": [
+        "Separates what is known from what is assumed: the output labels at least one item as a fact and at least one as an assumption, inference, or ambiguity, rather than stating everything with equal confidence.",
+        "States an explicit scope boundary: what will not change (e.g. auth provider, token/session format, database schema, public API contract).",
+        "Defines 'done' with observable conditions (e.g. tests pass, a test covers the targeted complaint, a specific behavior), not a vague goal.",
+        "Bounds the vague request into concrete labeled options (A/B/... or an explicit either/or with tradeoffs) instead of only asking an open-ended 'what do you want'.",
+        "Names the alternative interpretation(s) of the vague request that it is deliberately not acting on, so the reader can see that a meaning was chosen rather than assumed."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "This test is failing and I need it fixed before standup. Output: `auth.spec.ts:42 expected 200, got 401`. I'm pretty sure the token expired. Just sort it out and tell me what you changed.",
+      "expected_output": "Separates the observed fact (401 at auth.spec.ts:42) from the user's inference (token expired) and labels uncertainty. States scope: what it will change and what it will not. Defines done observably (the test passes). Does not present the token-expiry guess as established fact.",
+      "files": [],
+      "expectations": [
+        "Labels the 401 as an observed fact and the user's token-expiry belief as an unverified inference or assumption, rather than as established fact.",
+        "Does not treat the token-expiry hypothesis as the cause: it either rules expiry out using the code (for example, the token was issued on the line above) or presents expiry as only one unverified possibility.",
+        "Defines 'done' observably (the test passes and/or the verified cause is named).",
+        "Does not silently choose a fix; separates candidate fixes with differing impact, or asks which branch to take.",
+        "Identifies the actual cause in the code (the refresh handler rejects a refresh token because it requires payload.type === 'access') and verifies the fix by running the test.",
+        "States a scope boundary: what it will change and what it will not (e.g. expiry logic, signature code, token lifetimes, other routes), rather than only reporting the one-line fix."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Before we ship, clean up the auth code and make it nicer. You can reorganize whatever you need. I trust your judgment.",
+      "expected_output": "Turns vague goals ('clean up', 'nicer') into observable done conditions. States explicit scope and what will not change. States assumptions. Keeps terminology stable rather than drifting between handler/controller/route. Surfaces what 'nicer' could mean instead of silently inventing a definition.",
+      "files": [],
+      "expectations": [
+        "States an explicit scope boundary: what will not change (e.g. API contract, token format, database schema, runtime behavior).",
+        "Defines 'done' with observable conditions (e.g. existing tests pass, code typechecks, changes stay within the chosen scope).",
+        "Connects the vague goal ('clean up', 'nicer') to a concrete, specific set of changes it makes or proposes, rather than leaving the goal at the level of the original vague wording.",
+        "States a default recommendation and its risk or reversibility, or otherwise explicitly names an assumption to proceed on.",
+        "Names at least one alternative meaning of 'clean up / nicer' that it considered but did not act on, and why (including reversibility)."
+      ]
+    }
+  ]
+}
