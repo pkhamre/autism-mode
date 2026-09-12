@@ -96,7 +96,7 @@ Fork, edit `SKILL.md`, and keep your copy. The rules are defaults, not a diagnos
 
 ## Who this is for
 
-Autistic people differ. Communication preferences vary widely, and this skill is a set of configurable defaults, not a claim that every autistic person communicates or reads the same way. It draws on widely reported preferences for direct, precise, unambiguous language and predictable structure, but you should adjust it to the individual.
+Anyone and everyone. Autistic people differ. All people differ. Communication preferences vary widely, and this skill is a set of configurable defaults, not a claim that every autistic person communicates or reads the same way. It draws on widely reported preferences for direct, precise, unambiguous language and predictable structure, but you should adjust it to the individual.
 
 ## Contributing
 
