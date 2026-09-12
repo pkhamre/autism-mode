@@ -69,8 +69,6 @@ This skill changes the shape of the agent's output so the meaning is on the page
 </tr>
 </table>
 
-The ADHD sibling leads with the action. This one leads with the meaning.
-
 ## The rules
 
 Full text in [SKILL.md](SKILL.md).
