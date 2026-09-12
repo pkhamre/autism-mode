@@ -11,16 +11,16 @@ This repo is one agent skill. `SKILL.md` at the repo root is the product. There 
 
 ## Editing SKILL.md
 
-- Frontmatter accepts only `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`. `name` is `i-have-autism` and must not change; it determines the install path.
+- Frontmatter accepts only `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`. `name` is `autism-mode` and must not change; the installed folder must match it.
 - `description` is the trigger, not documentation. Rewording it changes when the skill fires; treat it as behavior.
 - Keep each rule complete, with a why and a concrete Bad/Good pair. Keep terminology stable across the file (that is the skill's own rule 6). Do not compress a rule into a slogan.
 - If a rule changes, update the numbered list in `README.md`.
 
 ## Local install is a snapshot
 
-Install with `npx skills add pkhamre/i-have-autism`. `.agents/` and `skills-lock.json` are gitignored.
+Install with `npx skills add pkhamre/autism-mode`. `.agents/` and `skills-lock.json` are gitignored.
 
-Editing the root `SKILL.md` does not update the installed copy at `.agents/skills/i-have-autism/SKILL.md`. Resync it before testing, or you will test the old file.
+Editing the root `SKILL.md` does not update the installed copy at `.agents/skills/autism-mode/SKILL.md`. Resync it before testing, or you will test the old file.
 
 After resyncing, recompute the lock hash and write it to `skills-lock.json` (or the CLI will see the install as modified). The hash is SHA-256 over each file's `relativePath` + raw content, files sorted by `relativePath.localeCompare`, skipping `.git` and `node_modules`. This is the vercel-labs/skills lock format.
 

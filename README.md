@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="i-have-autism" width="220">
+  <img src="logo.png" alt="autism-mode" width="220">
 </p>
 
 <p align="center"><strong>Autism-friendly outputs. No mind reading required.</strong></p>
@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npx skills add pkhamre/i-have-autism
+npx skills add pkhamre/autism-mode
 ```
 
 Then turn it on for a session by asking for "autism mode" or invoking the skill. It stays on until you say "stop autism mode" or "normal mode".

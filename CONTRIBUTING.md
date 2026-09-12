@@ -31,7 +31,7 @@ Eval cases live in `evals/evals.json`. They check that the skill changes the age
 
 ```json
 {
-  "skill_name": "i-have-autism",
+  "skill_name": "autism-mode",
   "evals": [
     {
       "id": 1,
