@@ -27,32 +27,52 @@ If you change a rule or its wording, check the rule list in the README and updat
 
 ## Adding eval cases
 
-Eval cases live in `evals/evals.json`. They check that the skill changes the agent's output in a specific, observable way. The schema:
+Eval cases live in `evals/evals.json`. They check that the skill changes the agent's output in a specific, observable way. Every case uses ordered turns, including cases with only one turn, so that activation, persistence, tuning, and deactivation are observable. The schema:
 
 ```json
 {
   "skill_name": "autism-mode",
   "evals": [
     {
-      "id": 1,
-      "prompt": "the request given to the agent",
-      "expected_output": "a plain description of the expected result",
+      "id": "short-kebab-slug",
+      "summary": "one line naming the behavior under test",
+      "kind": "communication",
       "files": [],
-      "expectations": [
-        "an objectively checkable statement about the output"
+      "turns": [
+        {
+          "user": "the first request given to the agent",
+          "expected_output": "a plain description of the expected result for this turn",
+          "expectations": [
+            "an objectively checkable statement about the agent's response to this turn"
+          ]
+        },
+        {
+          "user": "the next request, with the earlier turns still in context",
+          "expected_output": "the expected result for this turn",
+          "expectations": [
+            "a checkable statement about this turn's response"
+          ]
+        }
       ]
     }
   ]
 }
 ```
 
+- `kind` is `"communication"` for prompt-only cases, or `"repository"` when the case needs files to inspect or run.
+- `files` lists the fixture paths the case needs, under `evals/fixtures/<case>/`. List only what the case uses.
+- `expectations` attach to the turn that produces the behavior. The runner replays the `user` turns in order and keeps earlier turns in context, so a later expectation can depend on the mode staying on or off.
+- `expected_output` describes the turn's result in plain language; the `expectations` are what pass or fail.
+
 Write each expectation so a reader can mark it pass or fail without arguing about taste. For example, you can check "labels the 401 as an observed fact and the token-expiry belief as an unverified inference"; you cannot check "writes well".
+
+Every behavior in `SKILL.md`, including the activation and lifecycle rules, must appear in at least one expectation. Cover cases where the mode must stay off or stay small, not only cases where it is active.
 
 ## Before you open a pull request
 
-1. Load the skill and try it on a realistic prompt. It turns on with "autism mode" or by invoking the skill.
+1. Load the skill and try it on a realistic prompt. The full mode turns on with "autism mode" or by invoking the skill; a single-behavior request applies only to the current task, and "I have autism" alone does not turn it on.
 2. Confirm the frontmatter parses and the `name` matches the folder name.
-3. If you added or changed an eval, run it with and without the skill and note the difference.
+3. If you added or changed an eval, replay its turns with and without the skill and note the difference.
 4. Keep one logical change per pull request.
 5. Update the README if the change affects what the README describes.
 
